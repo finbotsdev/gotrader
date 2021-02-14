@@ -1,0 +1,15 @@
+name: rebase upstream
+
+on:
+  schedule:
+    - cron: "* 23 * * *"
+  workflow_dispatch:
+
+jobs:
+  rebase_upstream:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: finbotsdev/actions_rebase@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          upstream_repository: luismcruz/gotrader
